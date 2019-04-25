@@ -1,23 +1,149 @@
 .footer{
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    background-color: $color-grey-dark;
+    color: $color-grey-light;
+    padding: 8rem 0 10rem 0;
+    font-size:1.4rem;
+
+    @include respond(tab-port) {
+        padding: 4rem 0;
+        height: 100%;
+    }
+
+    @include respond(phone) {
+        padding:1rem;
+ 
+    }
+
+
+    &__logo-box{
+       
+        text-align: center;
+        width:15rem;
+        margin: 0 auto 7rem auto;
+
+        @include respond(tab-port){
+            padding: $padding-small 0 $padding-xs 0;
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        @include respond(phone){
+           
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            width:13rem;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__logo{
+       width:100%;
+       height:auto;
+
+       @include respond(tab-port){
+        // width:12rem;
+    }
+
+    @include respond(phone){
+        
+    }
+    }
+
     &__navigation{
+        padding: $padding-xs 0;
+        border-top:2px solid $color-grey;
+        display:inline-block;
+        width: 100%;
 
 
+
+    @include respond(tab-port) {
+        // width: 100%;
+        // text-align: center;
+        // padding: 0 $padding-small;
+    }
+    @include respond(phone) {
+        border-top:2px solid transparent;
+       
+    }
     }
 
     &__list{
+        list-style: none;
+        margin-bottom: $margin-small;
+        white-space: nowrap;
+        text-align: center;
 
+        @include respond(phone){
+            // padding:0 4rem;
+            margin-bottom:0;
+            text-align: left;
+        }
     }
 
     &__item{
+        display: inline-block;
+        
 
+        @include respond(phone){
+            display: block;
+
+            
+        }
+
+        &:not(:last-child){
+            margin-right:2rem;
+
+            // @include respond(tab-port){
+            //     // margin-right:1rem;
+            // }
+
+            @include respond(phone){
+                margin-bottom:.5rem;
+            }
+        }
     }
 
     &__link{
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-bottom: .3rem;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom .5s ease-in;
 
+        &:hover{
+            border-bottom: 2px solid $color-primary-light;
+        }
+
+        @include respond(tab-port) {
+            font-size: $p-small;
+        }
     }
-    
+
     &__copyright{
-  
+       display: inline-block;
+        top:0;
+        right:0;
+        padding: $padding-xs 0;
+        border-top:2px solid $color-grey;
+
+
+        @include respond(tab-port) {
+            font-size: $p-small;
+        }
+
+        @include respond(phone){
+            border-top:2px solid transparent;
+            // text-align: center;
+    
+        }
     }
+
 
 }

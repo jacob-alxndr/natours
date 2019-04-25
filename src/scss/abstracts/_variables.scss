@@ -1,32 +1,46 @@
-// COLORS
-$color-primary: #f1f1f1;
-$color-secondary:#f1f1f1;
-$color-secondary-dark:#f1f1f1;
-$color-tertiary: #f1f1f1;
-$white: #f1f1f1;
-$light-grey: #eee;
-$black:#010101;
+//Color variables
+$color-primary:#55c57a;
+$color-primary-light:#7ed56f;
+$color-primary-dark:hsl(160, 64%, 43%);
 
-$light-text: rgb(80, 80, 80);
-$dark-text: #222;
+$color-secondary: #ff7300;
+$color-secondary-light:#ffb900;
+$color-secondary-dark: #ff7730;
 
-//FONTS
-$h1: 4.883rem;
-$h2: 3.906rem;
-$h3: 3.125rem;
-$h4: 2.5rem;
-$h5: 1.6rem;
-$p-small: 1.280px;
+$color-tertiary: #507fff;
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark:  #5463fa;
 
-//MARGINS
+$color-white:#fff;
+$color-grey-light: #f7f7f7;
+$color-grey: #9c9c9c;
+$color-grey-dark:#333;
+$color-black: #202020;
+
+//Font variables
+$h1: 5.653rem;
+$h2: 3.998rem;
+$h3: 2.827rem;
+$h4: 1.999rem;
+$h5: 1.414rem;
+$h6: 1rem; 
+$p-small: 1.280rem;
+
+
+//Grid variables
+$width-grid:114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 7rem;
+
+//Margin variables
 $margin-xs: 1rem;
 $margin-small: 2rem;
 $margin-medium: 4rem;
 $margin-large: 6rem;
 $margin-huge: 10rem;
 
-
-//PADDING
+//Padding variables
 $padding-xs: 1rem;
 $padding-small: 2rem;
 $padding-medium: 4rem;

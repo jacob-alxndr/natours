@@ -10,7 +10,7 @@ sass.compiler = require('node-sass')
 
 gulp.task('sass', function () {
       // we want to run "sass css/app.scss css/app.css --watch"
-      return gulp.src("src/scss/main.scss")
+      return gulp.src("src/scss/**/*.scss")
             .pipe(sourceMaps.init())
             .pipe(sass())
             .pipe(

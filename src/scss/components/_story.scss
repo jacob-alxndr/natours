@@ -1,0 +1,137 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    @include boxShadow;
+    background-color: rgba($color-white, .7);
+    padding: $padding-large $padding-large $padding-large $padding-large;
+    border-radius: .3rem;
+    font-size: $h5;
+    transform: skewX(-12deg);
+
+    @include respond(tab-port){
+        width:100%;
+        transform: skewX(0deg);
+    }
+
+    @include respond(phone){
+       box-shadow: none;
+       background-color: transparent;
+       padding: $padding-large $padding-large 0 8rem;
+    }
+
+
+    &__shape{
+        height:15rem;
+        width: 15rem;
+        float: left;    
+        transform: translateX(-2rem) skewX(12deg);
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @supports (-webkit-clip-path:polygon(0 0)) or (clip-path:polygon(0 0)){
+            
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            // first number is the radius, 50% in this case will be 7.5 rem and the diameter will be 15rem
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+        }
+
+        @include respond(tab-port){
+           
+            float: none;
+            transform: translateX(0rem) skewX(0deg);
+            -webkit-shape-outside:none;
+            shape-outside: none;
+            -webkit-clip-path: none;
+            clip-path:none;
+            height:auto;
+            width: 100%;
+            @include auto();
+            border-radius: 0;
+
+        }
+    }
+  
+    &__image{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .2s ease-in;
+
+        @include respond(tab-port){
+            transform: translateX(0rem) scale(1);
+            border-radius: .2rem;
+            width: 100%;
+         
+        }
+    }
+
+    &__text{
+        transform: skewX(12deg);
+
+        @include respond(tab-port){
+            transform: translateX(0rem) skewX(0deg);
+            margin-top: $margin-xs;
+
+            .heading-tertiary{
+                font-size: $p-small;
+            }
+        }
+
+        
+    }
+
+    &__caption{
+        @include center;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transition: all .2s ease-in;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        @include respond(tab-port){
+            -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+            position: relative;
+            opacity: 1;
+            transform: none;
+            color: $color-black;
+            display: block;
+            top:0;
+            left:0;
+            text-align: left;
+            margin-top: $margin-small;
+        }
+
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+
+        @include respond(tab-port){
+            opacity: 1;
+            transform: translate(0);
+
+        }
+
+    }
+
+    &:hover &__image{
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(75%);
+
+        @include respond(tab-port){
+            transform: none;
+        filter: none;
+
+
+        }
+        
+    }
+}

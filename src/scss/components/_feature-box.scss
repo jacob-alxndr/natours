@@ -1,0 +1,42 @@
+.feature-box{
+
+    background-color: rgba($color-white, $alpha: .8);
+    font-size: 1.4rem;
+    padding: $padding-small $padding-small $padding-medium $padding-small;
+    text-align: center;
+    border-radius: 3px;
+    transition: transform 200ms ease-in-out;
+    @include boxShadow;
+
+    &:not(:last-sibbling){
+        margin: 0 0 3rem 0 !important;
+        }
+
+    @include respond(phone){
+        max-width: 100%;
+        // @include auto;
+        padding: $padding-small $padding-medium $padding-medium $padding-medium;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: rgba($color-white, $alpha: .55);
+        
+    }
+
+    &__icon{
+        display: inline-block;
+        font-size: 6rem;
+        @include gradientText;
+    }
+
+    &__text{
+        text-align: left;
+        font-weight: 300;
+        line-height: 1.19;
+        
+    }
+
+    &:hover{
+        transform: translateY(-2rem) scale(1.05);
+    }
+
+}
